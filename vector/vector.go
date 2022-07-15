@@ -20,14 +20,14 @@ func NewWithSize(n int) *vector {
 	return &vector{array: make([]interface{}, n)}
 }
 
-// Empty vector是否为空
-func (v *vector) Empty() bool {
-	return len(v.array) == 0
-}
-
 // Size 返回vector大小
 func (v *vector) Size() int {
 	return len(v.array)
+}
+
+// Empty vector是否为空
+func (v *vector) Empty() bool {
+	return v.Size() == 0
 }
 
 // Capacity 返回vector容量
