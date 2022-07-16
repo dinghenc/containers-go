@@ -82,9 +82,8 @@ func (v *vector) Insert(index int, val interface{}) int {
 		panic(outOfRange(v.Size(), index))
 	}
 	// 先在末尾插入空值, 再从index位置处往后移动
-	lastIndex := v.Size() - 1
 	v.PushBack(nil)
-	for i := lastIndex; i >= index; i-- {
+	for i := v.Size() - 2; i >= index; i-- {
 		v.array[i+1] = v.array[i]
 	}
 	v.array[index] = val
